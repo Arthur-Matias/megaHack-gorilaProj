@@ -1,0 +1,69 @@
+.listDiv{
+    float: left;
+}
+.listDiv div{
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.12), 0px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px; 
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    float: left;
+}
+
+strong{
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.12), 0px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 5px; 
+    padding: 20px;
+    margin: 5px;
+    display: block;
+    width: 200px;
+}
+
+li{
+    display: flex;
+    flex-direction: row;
+}
+
+#dropdown-img{
+    margin: 0;
+    margin-left: 5px;
+    padding: 1px;
+    display: flex;
+    flex-direction: column;
+    width: 13px;
+    height: auto;
+    cursor: pointer;
+}
+
+.checkbox-btn{
+    display: none;
+}
+select{
+    list-style: none;
+    display: none;
+    overflow: hidden;
+    height: auto;
+    max-height: 70px;
+    width: auto;
+    margin: 10px;
+    margin-top: 30px;
+    margin-left: 90px;
+    position: absolute;
+}
+select option{
+    padding: 10px;
+}
+
+.broker-menu ul{
+    display: none;
+}
+
+.checkbox-btn:checked ~ select{
+    display: flex;
+}

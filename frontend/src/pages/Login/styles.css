@@ -1,0 +1,16 @@
+.checkbox-corretor{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin: 20px 0 20px 0;
+}
+
+#corretor{
+    margin: 0 5px;
+    width: auto;
+    height: auto;
+}
+a{
+    margin: 10px;
+    margin-bottom: 20px;
+}
