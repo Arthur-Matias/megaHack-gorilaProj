@@ -8,15 +8,15 @@ export default function Login({ history }){
 
     async function handleSubmit(event){
       event.preventDefault();
-      
+      localStorage.setItem('user',null);
       const response = await api.post('/login', { email, pwd });
       console.log(response.data)
   
       const { _id } = response.data;
   
       localStorage.setItem('user', _id);
-
-      if(response.data === null){
+      console.log("usuário existe? " + response.data[0] == null)
+      if(response.data[0] == null){
         history.push('/register');
       }else{
         history.push('/listDashboard');

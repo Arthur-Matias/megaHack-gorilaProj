@@ -30,14 +30,13 @@ export default function Cadastro({ history }){
         
         if (cpf !== '') {
             const response = await api.post('/registerUser', { name, email, pwd, phone, cpf, birthday, sex, broker });
+            const { _id} = response.data;
   
-            const { user_id, status } = response.data;
-  
-            localStorage.setItem('user', user_id);
-            if (status) {
+            if (_id != null) {
+                localStorage.setItem('user', _id);
                 history.push('/listDashboard')
             }else{
-                alert("Ocorreu um erro, tente novamente")
+                alert("Já existe uma conta com este e-mail")
             }
         }        
     }

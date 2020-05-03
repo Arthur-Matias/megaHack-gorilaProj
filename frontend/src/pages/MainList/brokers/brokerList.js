@@ -3,6 +3,8 @@ import api from '../../../services/api'
 import dropDown from '../../../assets/angle-down-solid.svg';
 
 import './style.css'
+import './../styles.css'
+
 
 export default function MainList(){
     async function listar(){
