@@ -1,0 +1,1 @@
+A variavel "broker" foi erroneamente definida. Apesar de "broker" em inglês significar corretor, este está se referindo ao investidor.
