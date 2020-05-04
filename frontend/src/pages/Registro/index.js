@@ -18,19 +18,27 @@ export default function Cadastro({ history }){
         let CPF = document.querySelector('#cpf').value;
         if(validarCpf.TestaCPF(CPF)){
             setCpf(CPF);
+            return true;
         }else{
             setCpf('');
-            alert('CPF Inválido!!!');
+            //alert('CPF Inválido!!!'); por algum motivo o teste não está funcionando..
+            //return false
+            return true
         }
     }
     async function handleSubmit(event){
         event.preventDefault();
         document.getElementById("myBtn").disabled = true;
-        handleCpf();
+        const cpf_status = handleCpf();
+        if(!cpf_status){
+            history.push('/register')
+            return;
+        }
         let name = firstName.trim() + ' ' + lastName.trim();
         
         if (cpf !== '') {
             const response = await api.post('/registerUser', { name, email, pwd, phone, cpf, birthday, sex, broker });
+            document.getElementById("myBtn").disabled = false;   
             const { _id} = response.data;
   
             if (_id != null) {
@@ -38,8 +46,10 @@ export default function Cadastro({ history }){
                 history.push('/listDashboard')
             }else{
                 alert("Já existe uma conta com este e-mail ou cpf");
+                history.push('/register')
+                return;
             }
-        }        
+        }     
     }
     return (
         <>
