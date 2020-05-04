@@ -25,6 +25,7 @@ export default function Cadastro({ history }){
     }
     async function handleSubmit(event){
         event.preventDefault();
+        document.getElementById("myBtn").disabled = true;
         handleCpf();
         let name = firstName.trim() + ' ' + lastName.trim();
         
@@ -36,7 +37,7 @@ export default function Cadastro({ history }){
                 localStorage.setItem('user', _id);
                 history.push('/listDashboard')
             }else{
-                alert("Já existe uma conta com este e-mail")
+                alert("Já existe uma conta com este e-mail ou cpf");
             }
         }        
     }
@@ -62,7 +63,7 @@ export default function Cadastro({ history }){
                     onChange={event => setLastName(event.target.value)}
                 />
 
-                <label htmlFor="email">E-Mail</label>
+                <label htmlFor="email">E-mail</label>
                 <input 
                     type="email"
                     id="email"
@@ -95,7 +96,6 @@ export default function Cadastro({ history }){
                 <input 
                     type="date"
                     id="birthday"
-                    placeholder="Somente numeros..."
                     value={birthday}
                     onChange={event => setBirthday(event.target.value)}
                     required
@@ -105,7 +105,6 @@ export default function Cadastro({ history }){
                 <input 
                     type="text"
                     id="cpf"
-                    placeholder="Somente numeros..."
                     value={cpf}
                     onChange={event => setCpf(event.target.value)}
                     required
@@ -129,9 +128,10 @@ export default function Cadastro({ history }){
                     <label
                         htmlFor="corretor" 
                         name='labelCorretor'
+                        id='labelCorretor'
                         >Sou corretor de investimentos</label>
                 </div>
-                <button type="submit" className="btn">Entrar</button>
+                <button type="submit" className="btn" id='myBtn'>Cadastrar</button>
             </form>
         </>
     )

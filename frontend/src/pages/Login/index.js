@@ -7,19 +7,20 @@ export default function Login({ history }){
     const [pwd, setPwd] = useState('');
 
     async function handleSubmit(event){
+      document.getElementById("myBtn").disabled = true;
       event.preventDefault();
       localStorage.setItem('user',null);
       const response = await api.post('/login', { email, pwd });
       console.log(response.data)
-  
+
       const { _id } = response.data;
-  
+
       localStorage.setItem('user', _id);
       console.log("usuário existe? " + response.data[0] == null)
       if(response.data[0] == null){
-        history.push('/register');
+      history.push('/register');
       }else{
-        history.push('/listDashboard');
+      history.push('/listDashboard');
       }
     }
     return (
@@ -33,6 +34,7 @@ export default function Login({ history }){
                 id="email"
                 placeholder="example@example.com"
                 value={email}
+                required
                 onChange={event => setEmail(event.target.value)}
               />
               
@@ -42,9 +44,10 @@ export default function Login({ history }){
                 id="pwd"
                 value={pwd}
                 onChange={event => setPwd(event.target.value)}
+                required
               />
               <a href="/register">Inscreva-se</a>
-              <button type="submit" className="btn">Entrar</button>
+              <button type="submit" className="btn" id='myBtn'>Entrar</button>
               
             </form>
         </>

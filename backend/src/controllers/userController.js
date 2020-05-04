@@ -5,9 +5,9 @@ module.exports = {
 
         const { name, email, pwd, phone, birthday, cpf, sex, broker } = req.body;
         
-        const already_data = await loginController.findUsers({email})
+        const already_data = await loginController.findUsers({email});
 
-        const already_exists = already_data[0] != null
+        const already_exists = already_data[0] != null;
 
         var a = null
 
@@ -32,7 +32,6 @@ module.exports = {
                 broker
             });
             return res.json(a);
-
         }
     }
 }

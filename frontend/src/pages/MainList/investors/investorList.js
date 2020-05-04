@@ -25,13 +25,13 @@ export default function MainList(){
                 <ul className='list' id='investors-list'>
                     {investors.map(investor => (
                         <li className='investor' key={investor._id}>
-                        <div className="broker-menu">
+                        <div className="investors-menu">
                         <p>{investor.name}</p>
                             <input type="checkbox" id={investor._id} className='checkbox-btn'/>
                             <label htmlFor={investor._id} id='icone'><img src={dropDown} id='dropdown-img' alt="dropdown menu"/></label>
-                            <select multiple name="broker-ctt-options" id="broker-ctt-options">
-                                <option className='broker-option'>{investor.email}</option>
-                                <option className='broker-option'>{investor.phone}</option>
+                            <select multiple name="investors-ctt-options" id="investors-ctt-options">
+                                <option className='investors-option'>{investor.email}</option>
+                                <option className='investors-option'>{investor.phone}</option>
                             </select>
                         </div>
                     </li>

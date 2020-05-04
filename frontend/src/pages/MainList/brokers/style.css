@@ -1,14 +1,18 @@
 .listDiv{
     float: left;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 .listDiv div{
     box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.12), 0px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 5px; 
-    padding: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     display: flex;
     float: left;
+    min-width: 200px;
 }
 
 strong{
@@ -22,7 +26,7 @@ ul {
     padding: 20px;
     margin: 5px;
     display: block;
-    width: 200px;
+    min-width: 250px;
 }
 
 li{
@@ -44,7 +48,7 @@ li{
 .checkbox-btn{
     display: none;
 }
-select{
+#broker-ctt-options{
     list-style: none;
     display: none;
     overflow: hidden;
@@ -56,7 +60,7 @@ select{
     margin-left: 90px;
     position: absolute;
 }
-select option{
+#broker-ctt-options option{
     padding: 10px;
 }
 
@@ -64,6 +68,6 @@ select option{
     display: none;
 }
 
-.checkbox-btn:checked ~ select{
+.checkbox-btn:checked ~ #broker-ctt-options{
     display: flex;
 }

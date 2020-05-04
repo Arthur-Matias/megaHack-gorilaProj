@@ -23,17 +23,17 @@ export default function MainList(){
     return (
         <>
             <div className="listDiv" onLoad={listar}>
-                <label htmlFor="investors-list"><strong>Lista de Corretores</strong></label>
-                <ul className='list' id='investors-list'>
+                <label htmlFor="broker-list"><strong>Lista de Corretores</strong></label>
+                <ul className='list' id='broker-list'>
                     {brokers.map(broker => (
-                        <li className='investor' key={broker._id}>
+                        <li className='broker' key={broker._id}>
                         <div className="broker-menu">
                         <p>{broker.name}</p>
                             <input type="checkbox" id={broker._id} className='checkbox-btn'/>
                             <label htmlFor={broker._id} id='icone'><img src={dropDown} id='dropdown-img' alt="dropdown menu"/></label>
-                            <select multiple name="investor-ctt-options" id="investor-ctt-options">
-                                <option className='investor-option'>{broker.email}</option>
-                                <option className='investor-option'>{broker.phone}</option>
+                            <select multiple name="broker-ctt-options" id="broker-ctt-options">
+                                <option className='broker-option'>{broker.email}</option>
+                                <option className='broker-option'>{broker.phone}</option>
                             </select>
                         </div>
                     </li>

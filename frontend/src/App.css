@@ -85,7 +85,7 @@ body, input, button {
   font-size: 14px;
   color: #444;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-top: 20px;
 }
 
 .content form input{
@@ -113,4 +113,8 @@ body, input, button {
 
 .content button.btn:hover{
   background: var(--darker-blue);
+}
+
+#labelCorretor{
+  margin: 0;
 }
